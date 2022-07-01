@@ -11,7 +11,7 @@ class RegisterView(APIView):
         if serializer.is_valid():
             serializer.save()
             token = Helper(request).get_token(
-                serializer.data["id"], serializer.data["fullname"]
+                serializer.data["id"]
             )
 
             return Response(
